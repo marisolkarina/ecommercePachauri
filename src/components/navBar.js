@@ -1,8 +1,6 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-function navBar() {
+const NavBar = () => {
     return (
-      <div className="navBar">
+    <>
         <nav className="navbar navbar-expand-lg bg-light">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">Sagitario</a>
@@ -20,8 +18,8 @@ function navBar() {
                 </div>
             </div>
         </nav>
-      </div>
+    </>
     );
 }
 
-export default navBar;
+export default NavBar;
