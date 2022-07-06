@@ -1,20 +1,32 @@
 const NavBar = () => {
     return (
     <>
-        <nav className="navbar navbar-expand-lg bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-rosa">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">Sagitario</a>
+
+                <a className="navbar-brand ms-3 color-fucsia" href="#">Sagitario</a>
+
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div className="navbar-nav">
-                        <a className="nav-link active" aria-current="page" href="#">Inicio</a>
-                        <a className="nav-link" href="#">Cortes de cabello</a>
-                        <a className="nav-link" href="#">Teñidos de cabello</a>
-                        <a className="nav-link" href="#">Maquillaje</a>
-                        <a className="nav-link" href="#">Laceado</a>
-                    </div>
+                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0 botonera">
+                        <li className="me-lg-5 p-3 text-center">
+                            <a className="color-fucsia" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li className="me-lg-5 p-3 text-center">
+                            <a className="color-fucsia" aria-current="page" href="#">Cortes de cabello</a>
+                        </li>
+                        <li className="me-lg-5 p-3 text-center">
+                            <a className="color-fucsia" aria-current="page" href="#">Teñidos</a>
+                        </li>
+                        <li className="me-lg-5 p-3 text-center">
+                            <a className="color-fucsia" aria-current="page" href="#">Maquillaje</a>
+                        </li>
+                        <li className="me-lg-5 p-3 text-center">
+                            <a className="color-fucsia" aria-current="page" href="#">Laceado</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
