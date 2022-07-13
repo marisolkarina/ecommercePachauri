@@ -15,19 +15,19 @@ const NavBar = () => {
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0 botonera">
                         <li className="me-lg-5 p-3 text-center">
-                            <a className="color-fucsia" aria-current="page" href="#">Inicio</a>
-                        </li>
-                        <li className="me-lg-5 p-3 text-center">
-                            <a className="color-fucsia" aria-current="page" href="#">Cortes</a>
-                        </li>
-                        <li className="me-lg-5 p-3 text-center">
-                            <a className="color-fucsia" aria-current="page" href="#">Teñidos</a>
-                        </li>
-                        <li className="me-lg-5 p-3 text-center">
                             <a className="color-fucsia" aria-current="page" href="#">Maquillaje</a>
                         </li>
                         <li className="me-lg-5 p-3 text-center">
-                            <a className="color-fucsia" aria-current="page" href="#">Laceado</a>
+                            <a className="color-fucsia" aria-current="page" href="#">Perfumes</a>
+                        </li>
+                        <li className="me-lg-5 p-3 text-center">
+                            <a className="color-fucsia" aria-current="page" href="#">Cuidado del rostro</a>
+                        </li>
+                        <li className="me-lg-5 p-3 text-center">
+                            <a className="color-fucsia" aria-current="page" href="#">Cuidado capilar</a>
+                        </li>
+                        <li className="me-lg-5 p-3 text-center">
+                            <a className="color-fucsia" aria-current="page" href="#">Dermocosmética</a>
                         </li>
                     </ul>
                 </div>
