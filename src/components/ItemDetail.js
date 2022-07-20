@@ -1,6 +1,5 @@
 import React from 'react'
 import ItemCount from './ItemCount'
-// import ItemDetailContainer from './ItemDetailContainer'
 
 const ItemDetail = ({item}) => {
   return (
@@ -10,9 +9,10 @@ const ItemDetail = ({item}) => {
         ?
         <div>
             <h3>{item.nombre}</h3>
-            <h3>{item.precio}</h3>
-            <h3>{item.descripcion}</h3>
-            <h3>{item.stock}</h3>
+            <h3>Precio: {item.precio}</h3>
+            <img src={item.imagen} alt='imagen de producto'/>
+            <p>Descripción: {item.descripcion}</p>
+            {/* <h3>{item.stock}</h3> */}
             <ItemCount stock="5" initial={1}/>
         </div>
         

@@ -8,7 +8,7 @@ const Item = ({product}) => {
         <img src={product.imagen} alt='imagen de producto'/>
         <p>{product.descripcion}</p> 
         <div>
-            <ItemCount stock="5" initial="1"/>               
+          <ItemCount stock="5" initial="1"/>               
         </div>        
     </div>
   )
