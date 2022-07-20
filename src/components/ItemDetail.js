@@ -7,13 +7,17 @@ const ItemDetail = ({item}) => {
     {
         item.imagen
         ?
-        <div>
-            <h3>{item.nombre}</h3>
-            <h3>Precio: {item.precio}</h3>
-            <img src={item.imagen} alt='imagen de producto'/>
-            <p>Descripción: {item.descripcion}</p>
-            <h3>Stock: {item.stock}</h3>
-            <ItemCount stock={item.stock} initial={1}/>
+        <div className='productoDetalle'>
+            <div>
+                <img src={item.imagen} alt='imagen de producto'/>
+            </div>
+            <div>
+                <h3>{item.nombre}</h3>
+                <h3>Precio: {item.precio}</h3>
+                <p>Descripción: {item.descripcion}</p>
+                <h3>Stock: {item.stock}</h3>
+                <ItemCount stock={item.stock} initial={1}/> 
+            </div>
         </div>
         
         : <p>Cargando...</p>        
