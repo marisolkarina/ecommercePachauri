@@ -18,6 +18,7 @@ const ItemDetail = ({item}) => {
                 <h3>Stock: {item.stock}</h3>
                 <ItemCount stock={item.stock} initial={1}/> 
             </div>
+            
         </div>
         
         : <p>Cargando...</p>        

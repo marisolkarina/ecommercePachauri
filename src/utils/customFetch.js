@@ -1,5 +1,3 @@
-
-
 const customFetch = (time, task) => {
     let is_ok = true;
     return new Promise((resolve, reject) => {

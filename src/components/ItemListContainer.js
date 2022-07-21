@@ -1,34 +1,32 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import ItemList from './ItemList';
-import {data} from '../utils/products'
+import customFetch from '../utils/customFetch';
+import { useParams } from "react-router";
+import ItemCount from './ItemCount';
+const {data} = require('../utils/products')
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
 
-    const [productList, setProductList] = useState([])
+    const [productList, setProductList] = useState([]);
+    const { id } = useParams();
 
-    let is_ok = true;
-
-    let fetchProducts = (time, task) => {
-        return new Promise((resolve, reject) => {
-            if(is_ok) {
-                setTimeout(() => {
-                    resolve(task)
-                }, time);
-            } else {
-                reject("Error");
-            }
-        });
-    }
-
-    fetchProducts(2000, data)
-        .then(datos => setProductList(datos))
-        .catch(err => {console.log(err)})
+    useEffect(() => {
+        if(id === undefined) {
+            customFetch(2000, data)
+                .then(result => setProductList(result))
+                .catch(err => console.log(err))  
+        }else {
+            customFetch(2000, data.filter(item => item.categoryId === id))
+                .then(result => setProductList(result))
+                .catch(err => console.log(err))
+        }
+        
+    }, [id]);
 
 
     return(
         <>
-            <h5>{props.greetings}</h5>
-            
+           
             <ItemList items={productList}/>
             
         </>
