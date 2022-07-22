@@ -1,7 +1,7 @@
 import React from 'react'
 import ItemCount from './ItemCount'
 import {Link} from 'react-router-dom';
-const {data} = require('../utils/products')
+
 
 const Item = ({product}) => {
   return (
@@ -10,7 +10,7 @@ const Item = ({product}) => {
         <img src={product.imagen} alt='imagen de producto'/>
         <p>{product.descripcion}</p> 
         <div>
-          <Link to={`/item/${data.id}`}>Detalle</Link>
+          <Link to={`/item/${product.id}`}>Detalle</Link>
           <br />
           <ItemCount stock="5" initial="1"/>               
         </div>        
