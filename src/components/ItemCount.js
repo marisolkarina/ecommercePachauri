@@ -1,9 +1,7 @@
 import React, {useState} from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import {Link} from 'react-router-dom';
-// const {data} = require('../utils/products')
 
-function ItemCount ({stock, initial}) {
+const ItemCount = ({stock, initial, onAdd}) => {
+
     const[cantidad, setCantidad] = useState(initial);
     
     const aumentar = () => {
@@ -18,9 +16,7 @@ function ItemCount ({stock, initial}) {
         }
     }
     
-    function onAdd() {
-        console.log("Producto añadido al carrito");
-    }
+
 
     return (
         <>
@@ -28,11 +24,15 @@ function ItemCount ({stock, initial}) {
             <span className='fs-4 mx-3'>{cantidad}</span>
             <button className="btn btn-success" onClick={aumentar}>+</button>
             <div>
+                {
+                    cantidad&&stock
+                    ?<button onClick={()=>onAdd(cantidad)} className="btn btn-primary btn-lg mt-3">Agregar al carrito</button>
+                    :<div>...</div>
+                }
                 
-                <button onClick={onAdd} className="btn btn-primary btn-lg mt-3">Agregar al carrito</button>
             </div>
+               
         </>
     )
 }
-
 export default ItemCount
