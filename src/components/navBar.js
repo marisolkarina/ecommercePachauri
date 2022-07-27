@@ -28,7 +28,7 @@ const NavBar = () => {
                             <Link to="/category/cuidadocapilar" className="color-fucsia" aria-current="page">Cuidado capilar</Link>
                         </li>
                         <li className="me-lg-5 p-3 text-center">
-                            <Link to="/category/dermocosmetica" className="color-fucsia" aria-current="page" href="#">Dermocosmética</Link>
+                            <Link to="/category/dermocosmetica" className="color-fucsia" aria-current="page">Dermocosmética</Link>
                         </li>
                     </ul>
                 </div>
