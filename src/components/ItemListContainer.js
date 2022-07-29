@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react'
 import ItemList from './ItemList';
 import customFetch from '../utils/customFetch';
 import { useParams } from "react-router";
-import ItemCount from './ItemCount';
 const {data} = require('../utils/products')
 
 const ItemListContainer = () => {
