@@ -11,7 +11,7 @@ const ItemDetail = ({item}) => {
   const onAdd = (cantidad) => {
     alert('Añadiste '+cantidad+' unidades del producto al carrito')
     setItemCount(cantidad)
-    test.addToCart(item)
+    test.addItem(item)
   }
 
   return (
