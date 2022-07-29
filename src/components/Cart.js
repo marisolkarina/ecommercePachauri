@@ -14,10 +14,10 @@ const Cart = () => {
       {
         test.cartList.length>0 && test.cartList.map(item => (
           <div>
-            <h2>{item.nombre}</h2>
-            <img src={item.imagen} alt='imagen de producto'/>
-            <h5>2 items</h5>
-            <h3>Precio: S/. {item.precio} cada uno</h3>
+            <h2>{item.name}</h2>
+            <img src={item.image} alt='imagen de producto'/>
+            <h5>{item.quantity} items</h5>
+            <h3>Precio: S/. {item.price} cada uno</h3>
             <button className='btn btn-danger' onClick={() => test.removeItem(item.id)}>Eliminar</button>
             <hr />
           </div>

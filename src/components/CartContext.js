@@ -7,15 +7,20 @@ const CartContextProvider = ({ children }) => {
 
     const addItem = (item, quantity) => {
 
-        let isInCart = cartList.find(isInCart => isInCart.id === item.id)
+    let isInCart = cartList.find(isInCart => isInCart.id === item.id)
         
         if (isInCart) {
-            
             setCartList([...cartList])
+            isInCart.quantity += quantity
         } else {
-            setCartList([...cartList, item])
+            setCartList([...cartList, {
+                id: item.id,
+                name: item.nombre,
+                image: item.imagen,
+                price: item.precio,
+                quantity: quantity
+            }])
         }
-        
     }
 
     const removeItem = (itemId) => {
