@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react'
 import { Link } from 'react-router-dom';
-import { CartContext } from './CartContext';
+import { CartContext } from '../context/CartContext';
 import ItemCount from './ItemCount'
 
 const ItemDetail = ({item}) => {
@@ -19,7 +19,7 @@ const ItemDetail = ({item}) => {
     {
       item.imagen
       ?
-      <div className='productoDetalle'>
+      <div className='productoDetalle mx-3'>
         <div>
           <img src={item.imagen} alt='imagen de producto'/>
         </div>

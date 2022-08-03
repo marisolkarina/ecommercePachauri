@@ -31,8 +31,19 @@ const CartContextProvider = ({ children }) => {
         setCartList([])
     }
 
+    const totalProducts = () => {
+       
+        let cantCarrito=0
+
+        cartList.forEach(e => {
+            cantCarrito += e.quantity
+        });
+
+        return cantCarrito
+    }
+
     return (
-        <CartContext.Provider value={{cartList, addItem, removeItem, clear}}>
+        <CartContext.Provider value={{cartList, addItem, removeItem, clear, totalProducts}}>
             { children }
         </CartContext.Provider>
     )

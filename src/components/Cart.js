@@ -1,5 +1,6 @@
 import { useContext } from 'react'
-import { CartContext } from './CartContext'
+import { CartContext } from '../context/CartContext'
+import {Link} from 'react-router-dom'
 
 const Cart = () => {
 
@@ -27,7 +28,10 @@ const Cart = () => {
       {
         test.cartList.length>0
         ?<button className='btn btn-warning' onClick={test.clear}>Vaciar carrito</button>
-        :<h5>Ups... no has añadido ningún producto al carrito.</h5>
+        :<div>
+          <h5>Ups... no has añadido ningún producto al carrito.</h5>
+          <Link to="/"><button className='btn btn-success'>Seguir comprando</button></Link>
+        </div>
       }
      
             

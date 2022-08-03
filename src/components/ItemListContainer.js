@@ -25,8 +25,10 @@ const ItemListContainer = () => {
 
     return(
         <>
-           
+        <div className='gridProductos'>
             <ItemList items={productList}/>
+        </div>
+            
             
         </>
     );

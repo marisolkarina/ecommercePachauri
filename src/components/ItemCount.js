@@ -15,8 +15,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
             setCantidad(cantidad-1);
         }
     }
-    
-
 
     return (
         <>
