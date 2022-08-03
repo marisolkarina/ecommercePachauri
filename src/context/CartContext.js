@@ -32,18 +32,20 @@ const CartContextProvider = ({ children }) => {
     }
 
     const totalProducts = () => {
-       
-        let cantCarrito=0
+        let cantItems = 0
+        cartList.forEach(e => { cantItems += e.quantity });
+        return cantItems
+    }
 
-        cartList.forEach(e => {
-            cantCarrito += e.quantity
-        });
-
-        return cantCarrito
+    const totalPrice = () => {
+        let monto = 0
+        monto = parseFloat(monto)
+        cartList.forEach(e => { monto += (e.price * e.quantity) })
+        return monto
     }
 
     return (
-        <CartContext.Provider value={{cartList, addItem, removeItem, clear, totalProducts}}>
+        <CartContext.Provider value={{cartList, addItem, removeItem, clear, totalProducts, totalPrice}}>
             { children }
         </CartContext.Provider>
     )

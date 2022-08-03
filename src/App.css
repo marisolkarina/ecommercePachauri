@@ -51,3 +51,11 @@ body {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
+
+.carrito {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+}
+
