@@ -4,8 +4,12 @@ import {Link} from 'react-router-dom'
 
 const Cart = () => {
 
+  const createOrder = () => {
+    alert('Crear Orden')
+  }
+
   const test = useContext(CartContext)
-  console.log(test.cartList)
+  // console.log(test.cartList)
 
   return (
     <>
@@ -29,12 +33,15 @@ const Cart = () => {
           { test.cartList.length>0 && test.cartList.map(item => (
               <p>{item.name} | Subtotal: {item.quantity} x {item.price} = {item.quantity*item.price}</p>
             )) 
+            
           }
-        
+          
           {
             test.cartList.length>0
             ?<>
               <h4>Monto a pagar: S/. {test.totalPrice()}</h4>
+              <button oncClick={createOrder}>CHECKOUT NOW</button>
+              <br />
               <button className='btn btn-warning' onClick={test.clear}>Vaciar carrito</button>
             </>
             
@@ -43,6 +50,7 @@ const Cart = () => {
               <Link to="/"><button className='btn btn-success'>Seguir comprando</button></Link>
             </div>
           }
+          
         </div>
             
       </div>
