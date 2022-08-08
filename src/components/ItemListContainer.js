@@ -1,8 +1,9 @@
-import { db } from '../utils/firebaseConfig'
-import { collection, getDocs } from "firebase/firestore";
+// import { db } from '../utils/firebaseConfig'
+// import { collection, getDocs } from "firebase/firestore";
 import React, {useEffect, useState} from 'react'
 import ItemList from './ItemList';
 import { useParams } from "react-router";
+import { firestoreFetch } from '../utils/firestoreFetch';
 
 
 const ItemListContainer = () => {
@@ -12,27 +13,9 @@ const ItemListContainer = () => {
 
     useEffect(() => {
 
-        const firestoreFetch = async () => {
-
-
-            const querySnapshot = await getDocs(collection(db, "products"));
-            const dataFromFirestores = querySnapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data()
-            }))
-            return dataFromFirestores
-        }
-
-        if (id === undefined) {
-            firestoreFetch()
-                .then(result => setProductList(result))
-                .catch(err => console.log(err))
-        } else {
-            firestoreFetch()
-                .then(result => setProductList(result.filter(item => item.categoryId === id)))
-                .catch(err => console.log(err))
-        }
-        
+        firestoreFetch (id)
+            .then(result => setProductList(result))
+            .catch(err => console.log(err))
         
     }, [id]);
 

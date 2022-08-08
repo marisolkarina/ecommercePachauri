@@ -1,6 +1,6 @@
 import { query, orderBy, where, collection, getDocs } from '@firebase/firestore' 
 import { doc, getDoc } from "firebase/firestore";
-import {db} from "./firebaseConfig"
+import { db } from "./firebaseConfig"
 
 export const firestoreFetch = async (idCategory) => {
     let q;
@@ -24,10 +24,10 @@ export const firestoreFetchOne = async (idItem) => {
 
     if (docSnap.exists()) {
         return {
-            id: docSnap.id,
+            id: idItem,
             ...docSnap.data()
         }
     } else {
-        console.log("No se encontraron los documentos")
+        console.log("No se encontró el documento")
     }
 }

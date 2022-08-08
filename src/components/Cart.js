@@ -1,16 +1,54 @@
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { collection, serverTimestamp, setDoc, doc, updateDoc, increment } from 'firebase/firestore'
+import { db } from "../utils/firebaseConfig"
 
 const Cart = () => {
 
-  const createOrder = () => {
-    alert('Crear Orden')
-  }
-
   const test = useContext(CartContext)
-  // console.log(test.cartList)
 
+  let itemsForDB = test.cartList.map(item => ({
+    id: item.id,
+    title: item.name,
+    price: item.price,
+    qty: item.quantity
+  }))
+  const createOrder = () => {
+    let order = {
+      buyer: {
+        email: "leo@messi.com",
+        name: "Leo Messi",
+        phone: "123456789"
+      },
+      date: serverTimestamp(),
+      items: itemsForDB,
+      total: test.totalPrice()
+    }
+    console.log(order)
+  
+    const createOrderInFirestore = async () => {
+      const newOrderRef = doc(collection(db, "orders"))
+      await setDoc(newOrderRef, order)
+      return newOrderRef
+    }
+
+    createOrderInFirestore()
+      .then(result => alert('La orden ha sido creada. ID = '+result.id))
+      .catch(err => console.log(err))
+
+    test.cartList.forEach(async (item) => {
+      const itemRef = doc(db, 'products', item.id)
+      await updateDoc(itemRef, {
+        // stock: stock - item.quantity 
+        // documentacion
+        stock: increment(-item.quantity) 
+      })
+    })
+    
+    //borramos el carrito al aceptar
+    test.clear()
+  }
   return (
     <>
       <h1 className='m-2 text-center'>CARRITO DE COMPRAS</h1>
@@ -38,9 +76,10 @@ const Cart = () => {
           
           {
             test.cartList.length>0
-            ?<>
+            ?
+            <>
               <h4>Monto a pagar: S/. {test.totalPrice()}</h4>
-              <button oncClick={createOrder}>CHECKOUT NOW</button>
+              <button onClick={createOrder}>CHECKOUT NOW</button>
               <br />
               <button className='btn btn-warning' onClick={test.clear}>Vaciar carrito</button>
             </>
