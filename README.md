@@ -25,9 +25,9 @@ El cliente puede ir al detalle de cada producto, seleccionar la cantidad deseada
  - Bootstrap
  
 
-###Link del sitio web
+### Link del sitio web
+Link
 
-
-###Autora:
+### Autora:
 Marisol Karina Pachauri Rivera :)
 
