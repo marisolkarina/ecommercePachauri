@@ -24,7 +24,7 @@ El cliente puede ir al detalle de cada producto, seleccionar la cantidad deseada
  - CSS
  - Bootstrap
  - JavaScript
- 
+ - Firebase
 
 ### Link del sitio web
 Link
