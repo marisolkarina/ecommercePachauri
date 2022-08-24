@@ -1,5 +1,3 @@
-// import { db } from '../utils/firebaseConfig'
-// import { collection, getDocs } from "firebase/firestore";
 import React, {useEffect, useState} from 'react'
 import ItemList from './ItemList';
 import { useParams } from "react-router";

@@ -67,7 +67,7 @@ const Cart = () => {
           ))
         }
         <div className='border p-3 border-primary border-1 resumen w-50 m-auto'>
-          <h2 className='p-1 bg-info bg-opacity-10'>Resumen de compra</h2>
+          <h3 className='p-1 bg-info bg-opacity-10'>Resumen de compra</h3>
           { test.cartList.length>0 && test.cartList.map(item => (
               <p>{item.name} | Subtotal: {item.quantity} x {item.price} = {item.quantity*item.price}</p>
             )) 
@@ -78,8 +78,9 @@ const Cart = () => {
             test.cartList.length>0
             ?
             <>
-              <h4>Monto a pagar: S/. {test.totalPrice()}</h4>
-              <button onClick={createOrder}>CHECKOUT NOW</button>
+              <h5>Monto a pagar: S/. {test.totalPrice()}</h5>
+              <button onClick={createOrder} className="btn btn-primary">CHECKOUT NOW</button>
+              <br />
               <br />
               <button className='btn btn-warning' onClick={test.clear}>Vaciar carrito</button>
             </>
